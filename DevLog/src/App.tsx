@@ -1,8 +1,12 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import "./index.css";
 
 export default function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return (
+    <div>
+      <p className="font-bold">
+        this is a test for the DevLog blog thing me and Ben are goiong to do
+      </p>
+      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+    </div>
+  );
 }
