@@ -1,10 +1,16 @@
-import { Button } from "./components/ui/button";
+// src/App.tsx
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import Test from "./pages/Test";
 
 export default function App() {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <Button>Click Me</Button>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/testpage" element={<Test />} />
+        {/* Define more routes as needed */}
+      </Routes>
+    </Router>
   );
 }
