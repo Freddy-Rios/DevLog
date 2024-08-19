@@ -10,6 +10,10 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import ava from "./assets/gon .jpeg";
+import ava2 from "./assets/killua.jpeg";
+
 const components = [
   {
     title: "Alert Dialog",
@@ -23,29 +27,6 @@ const components = [
     description:
       "For sighted users to preview content available behind a link.",
   },
-  {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  },
 ];
 
 export default function NavigationMenuDemo() {
@@ -54,7 +35,7 @@ export default function NavigationMenuDemo() {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+            <NavigationMenuTrigger>Developer 1</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                 <li className="row-span-3">
@@ -63,9 +44,10 @@ export default function NavigationMenuDemo() {
                       className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                       href="/"
                     >
-                      <div className="mb-2 mt-4 text-lg font-medium">
-                        shadcn/ui
-                      </div>
+                      <Avatar>
+                        <AvatarImage src={ava} alt="AVA" />
+                        <AvatarFallback>CN</AvatarFallback>
+                      </Avatar>
                       <p className="text-sm leading-tight text-muted-foreground">
                         Beautifully designed components that you can copy and
                         paste into your apps. Accessible. Customizable. Open
@@ -80,16 +62,31 @@ export default function NavigationMenuDemo() {
                 <ListItem href="/testpage" title="Installation">
                   Test page
                 </ListItem>
-                <ListItem href="/docs/primitives/typography" title="Typography">
-                  Styles for headings, paragraphs, lists...etc
-                </ListItem>
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+            <NavigationMenuTrigger>Developer 2</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+              <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                <li className="row-span-3">
+                  <NavigationMenuLink asChild>
+                    <a
+                      className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                      href="/"
+                    >
+                      <Avatar>
+                        <AvatarImage src={ava2} alt="AVA" />
+                        <AvatarFallback>CN</AvatarFallback>
+                      </Avatar>
+                      <p className="text-sm leading-tight text-muted-foreground">
+                        Beautifully designed components that you can copy and
+                        paste into your apps. Accessible. Customizable. Open
+                        Source.
+                      </p>
+                    </a>
+                  </NavigationMenuLink>
+                </li>
                 {components.map((component) => (
                   <ListItem
                     key={component.title}
@@ -104,10 +101,10 @@ export default function NavigationMenuDemo() {
           </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuLink
-              href="/docs"
+              href="/"
               className={navigationMenuTriggerStyle()}
             >
-              Documentation
+              Home
             </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
